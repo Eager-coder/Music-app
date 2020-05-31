@@ -104,7 +104,13 @@ main{
                         cursor: pointer;
                         filter: invert(0.8);
                         @include mobile(){
-                            cursor: none;
+                            cursor: default;
+                            -khtml-user-select: none;
+                            -o-user-select: none;
+                            -moz-user-select: none;
+                            -webkit-user-select: none;
+                            user-select: none;
+                            background: transparent;
                         }
                     }
                 }
