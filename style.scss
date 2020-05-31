@@ -1,3 +1,8 @@
+@mixin mobile {
+    @media (max-width: 810px){
+        @content;
+    }
+}
 *{
     margin: 0;
     padding: 0;
@@ -5,27 +10,46 @@
     outline: none;
     color: whitesmoke;
 }
+main{
+    max-width: 900px;
+    margin: auto;
+    height: max-content;
+    z-index: 999;
+    position: relative;
+    overflow: hidden;
+}
 .app-container{
-    width: 800px;
+    width: 820px;
     height: 550px;
     display: flex;
-    justify-content: space-between;
-    margin: 100px auto;
+    margin: 50px auto 0px auto;
+    
+    @include mobile(){
+        width: max-content;
+        margin: 0;
+        height: 100vh;
+    }
     .player-box{
-        background: linear-gradient(180deg, #fd0164, rgb(47, 0, 78));
+        position: relative;
+        
+        background: linear-gradient(180deg, rgb(192, 192, 192), rgb(6, 89, 110));
         width: 50%;
-        padding: 10px;
+        padding: 15px;
         transform: translateX(50%);
         transition: 0.3s;
         z-index: 1;
+        @include mobile(){
+            transform: translateX(0%);
+            width: 100vw;
+            padding-top: 100px;
+        }
         .player{
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            height: 100%;
+            max-height: 500px;
             .thumbnail{
-                
                 img{
                     width: 330px;
                     height: 330px;
@@ -42,6 +66,11 @@
                 height: 200px;
                 input[type=range]{
                     width:100% ;
+                    
+                    height: 3px;
+                    
+                    
+                    
                 }
                 .buttons{
                     width: 300px;
@@ -55,18 +84,48 @@
                 }
             }
         }
+        #expand-btn{
+            display: none;
+            cursor: pointer;
+            img{
+                width: 40px;
+            }
+            @include mobile(){
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+        }
     }
     .list-box{
-        background: linear-gradient(180deg, #fd0164, rgb(47, 0, 78));
+        background: linear-gradient(180deg, rgb(197, 197, 197), rgb(6, 89, 110));
         position: relative;
         width: 50%;
-        padding-left: 30px;
+        padding: 30px;
         transform: translateX(-50%);
         transition: 0.3s;
         z-index: 0;
+        
+        @include mobile(){
+            transform: translateX(0%);
+            position: static;
+            width: 100vw;
+            z-index: 2;
+            padding:30px;
+            
+        }
         .search{
+           
             input{
                 color: black;
+                width: 90%;
+                font-size: 1rem;
+                height: 40px;
+                background: transparent;
+                
+                border: none;
+                border-bottom: rgb(0, 0, 0) solid 1px;
             }
         }
         .list-container{
@@ -74,6 +133,9 @@
             ul{
                 list-style: none;
                 width: 350px;
+                @include mobile(){
+                    width: 90%;
+                }
                 li{
                     font-size: 1rem;
                     border-radius: 7px;
@@ -81,35 +143,49 @@
                     margin:10px 0;
                     width: 100%;
                     cursor: pointer;
-                    
                 }
             }
-            
         }
-        #slide-btn{
-            position: absolute;
-            top: 0;
-            right: -15px;
-            background-color:rgb(226, 29, 62);
+        #collapse-btn{
+            display: none;
             cursor: pointer;
             img{
-                width: 20px;
-                height: 20px;
-                filter: invert(1);
-                transition: 0.3s;
+                width: 40px;
             }
-            
+            @include mobile(){
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
         }
     }
-   
+    #slide-btn{
+        position: absolute;
+        top: 0;
+        right: -20px;
+        background-color:rgb(58, 134, 153);
+        cursor: pointer;
+        z-index: 999;
+        @include mobile(){
+            display: none;
+        }
+        img{
+            width: 20px;
+            height: 20px;
+            filter: invert(1);
+            transition: 0.3s;
+        }
+    }
 }
 .list-active{
     transform: translateX(0%) !important;
-
+    @include mobile(){
+        transform: translateX(-100%) !important; 
+    }
 }
 .player-active{
     transform: translateX(0%) !important;
-
 }
 .slide-active{
     img{

@@ -9,12 +9,20 @@ const songName = document.getElementById('song-name');
 const thumbnail = document.getElementById('thumb');
 const searchField = document.getElementById('search');
 const slideBtn = document.getElementById('slide-btn');
+const expandBtn = document.getElementById('expand-btn')
+const collapseBtn = document.getElementById('collapse-btn')
 const playerCont = document.querySelector('.player-box')
 const listCont = document.querySelector('.list-box')
 slideBtn.addEventListener('click', ()=>{
     playerCont.classList.toggle('player-active')
     listCont.classList.toggle('list-active');
     slideBtn.classList.toggle('slide-active')
+})
+expandBtn.addEventListener('click', ()=>{
+    listCont.classList.add('list-active')
+})
+collapseBtn.addEventListener('click', ()=>{
+    listCont.classList.remove('list-active')
 })
 // Music List
 class ListConstructor {
@@ -71,6 +79,10 @@ function playMusic(index){
         audioTag.src = array[index].source;
         songName.innerText = array[index].artist + ' - ' + array[index].name
         thumbnail.src = array[index].thumb;
+        Array.from(listTag.querySelectorAll('li')).forEach(i=>{
+            i.classList.remove('li-active')
+        })
+        listTag.querySelectorAll('li')[index].classList.add('li-active')
     }
     audioTag.play();
     isPlaying = true;
@@ -106,7 +118,7 @@ progressBar.addEventListener('click', () => audioTag.currentTime = progressBar.v
 
 // Next/prev song
 nextBtn.addEventListener('click', () => {
-     nextSong()         
+     nextSong()      
 })
 
 prevBtn.addEventListener('click', () => {
@@ -134,6 +146,7 @@ function nextSong(){
             }
         } 
     }
+    
     playMusic(index)
 }
 
