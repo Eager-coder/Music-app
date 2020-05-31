@@ -119,8 +119,9 @@
 
 .app-container .list-box .list-container ul li {
   font-size: 1rem;
-  border-bottom: 1px white solid;
-  padding: 10px;
+  border-radius: 7px;
+  padding: 10px 5px;
+  margin: 10px 0;
   width: 100%;
   cursor: pointer;
 }
@@ -155,5 +156,9 @@
 .slide-active img {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+
+.li-active {
+  background-color: black;
 }
 /*# sourceMappingURL=style.css.map */

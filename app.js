@@ -42,15 +42,21 @@ audioTag.src = "https://raw.githubusercontent.com/Eager-coder/Music/master/Oroch
 songName.innerText = audio1.artist+' - '+audio1.name;
 thumbnail.src = './thumbnails/Orochi.jpg';
 
+
 // Setting music in list
 for(element of array){
     let music = `<li id="https://raw.githubusercontent.com/Eager-coder/Music/master/${element.name}.mp3"> ${element.artist} - ${element.name} </li>`;
     listTag.innerHTML += music;
 }
-
+listTag.querySelectorAll('li')[0].classList.add('li-active')
 // Changing music
 Array.from(listTag.querySelectorAll('li')).forEach( (e, index) => {
     e.addEventListener('click', ()=>{
+        Array.from(listTag.querySelectorAll('li')).forEach(i=>{
+            i.classList.remove('li-active')
+        })
+        e.classList.add('li-active')
+           
         playMusic(index)
     })
 })
