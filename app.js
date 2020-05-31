@@ -152,7 +152,7 @@ function nextSong(){
 
 searchField.addEventListener('input', (input)=>{
     Array.from(listTag.querySelectorAll('li')).forEach((e, index)=>{
-        let searching = input.target.value.trim();
+        let searching = input.target.value.trim().toLowerCase();
         let songName  = array[index].name.trim().toLowerCase();
         let artist = array[index].artist.trim().toLowerCase();
         if(searching == songName || searching == artist){
