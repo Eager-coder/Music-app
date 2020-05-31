@@ -10,13 +10,7 @@
     outline: none;
     color: whitesmoke;
 }
-img{
-    -khtml-user-select: none;
-    -o-user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-}
+
 main{
     max-width: 900px;
     margin: auto;
@@ -109,6 +103,9 @@ main{
                         width: 40px;
                         cursor: pointer;
                         filter: invert(0.8);
+                        @include mobile(){
+                            cursor: none;
+                        }
                     }
                 }
             }
