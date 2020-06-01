@@ -83,7 +83,7 @@ main {
 }
 
 .app-container .player-box .player .controls {
-  padding: 20px 0;
+  padding: 20px 0 20px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
