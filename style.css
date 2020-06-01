@@ -39,10 +39,9 @@ main {
 
 .app-container .player-box {
   position: relative;
-  background: -webkit-gradient(linear, left top, left bottom, from(silver), to(#06596e));
-  background: linear-gradient(180deg, silver, #06596e);
+  background: #1d2d46;
   width: 50%;
-  padding: 15px;
+  padding: 30px;
   -webkit-transform: translateX(50%);
           transform: translateX(50%);
   -webkit-transition: 0.3s;
@@ -55,7 +54,7 @@ main {
     -webkit-transform: translateX(0%);
             transform: translateX(0%);
     width: 100vw;
-    padding-top: 100px;
+    padding: 80px 30px 30px 30px;
   }
 }
 
@@ -108,7 +107,7 @@ main {
   -moz-appearance: none;
        appearance: none;
   cursor: pointer;
-  height: 1px;
+  height: 1.5px;
   background-color: rgba(255, 255, 255, 0.6);
 }
 
@@ -137,21 +136,44 @@ main {
   outline: none;
 }
 
-.app-container .player-box .player .controls .buttons {
-  width: 300px;
+.app-container .player-box .player .controls .time {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.app-container .player-box .player .controls .buttons {
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .app-container .player-box .player .controls .buttons img {
-  width: 40px;
   cursor: pointer;
-  -webkit-filter: invert(0.8);
-          filter: invert(0.8);
+  -webkit-filter: invert(0.9);
+          filter: invert(0.9);
+}
+
+.app-container .player-box .player .controls .buttons #play {
+  width: 50px;
+  height: 50px;
+}
+
+.app-container .player-box .player .controls .buttons #prev, .app-container .player-box .player .controls .buttons #next {
+  width: 25px;
+  height: 25px;
 }
 
 .app-container .player-box #expand-btn {
@@ -160,7 +182,9 @@ main {
 }
 
 .app-container .player-box #expand-btn img {
-  width: 40px;
+  width: 30px;
+  -webkit-filter: invert(1);
+          filter: invert(1);
 }
 
 @media (max-width: 810px) {
@@ -173,8 +197,7 @@ main {
 }
 
 .app-container .list-box {
-  background: -webkit-gradient(linear, left top, left bottom, from(#c5c5c5), to(#06596e));
-  background: linear-gradient(180deg, #c5c5c5, #06596e);
+  background: #1d2d46;
   position: relative;
   width: 50%;
   padding: 30px;
@@ -192,18 +215,18 @@ main {
     position: static;
     width: 100vw;
     z-index: 2;
-    padding: 30px;
+    padding: 50px 30px;
   }
 }
 
 .app-container .list-box .search input {
-  color: black;
+  color: white;
   width: 90%;
   font-size: 1rem;
   height: 40px;
   background: transparent;
   border: none;
-  border-bottom: black solid 1px;
+  border-bottom: white solid 1px;
 }
 
 .app-container .list-box .list-container ul {
@@ -218,12 +241,32 @@ main {
 }
 
 .app-container .list-box .list-container ul li {
-  font-size: 1rem;
   border-radius: 7px;
-  padding: 10px 5px;
-  margin: 10px 0;
+  padding: 5px 10px;
+  margin: 15px 0;
   width: 100%;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.app-container .list-box .list-container ul li span {
+  display: block;
+}
+
+.app-container .list-box .list-container ul li .artist {
+  font-size: 0.9rem;
+  color: #c9c9c9;
+}
+
+.app-container .list-box .list-container ul li img {
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
 }
 
 .app-container .list-box #collapse-btn {
@@ -232,7 +275,9 @@ main {
 }
 
 .app-container .list-box #collapse-btn img {
-  width: 40px;
+  width: 30px;
+  -webkit-filter: invert(1);
+          filter: invert(1);
 }
 
 @media (max-width: 810px) {
@@ -247,8 +292,8 @@ main {
 .app-container #slide-btn {
   position: absolute;
   top: 0;
-  right: -20px;
-  background-color: #3a8699;
+  right: -15px;
+  background-color: #0f88a7;
   cursor: pointer;
   z-index: 999;
 }
@@ -260,8 +305,8 @@ main {
 }
 
 .app-container #slide-btn img {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   -webkit-filter: invert(1);
           filter: invert(1);
   -webkit-transition: 0.3s;

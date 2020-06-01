@@ -33,17 +33,18 @@ main{
     }
     .player-box{
         position: relative;
-        
-        background: linear-gradient(180deg, rgb(192, 192, 192), rgb(6, 89, 110));
+        // background: linear-gradient(180deg,rgb(6, 89, 110), rgb(192, 192, 192), rgb(6, 89, 110));
+        background: #1d2d46;
         width: 50%;
-        padding: 15px;
+        padding: 30px;
         transform: translateX(50%);
         transition: 0.3s;
         z-index: 1;
         @include mobile(){
             transform: translateX(0%);
+            
             width: 100vw;
-            padding-top: 100px;
+            padding: 80px 30px 30px 30px;
         }
         .player{
             display: flex;
@@ -71,8 +72,7 @@ main{
                     -webkit-appearance: none;
                     appearance: none;
                     cursor: pointer;
-                    height: 1px;
-                   
+                    height: 1.5px;
                     background-color: rgba(255, 255, 255, 0.6);
                     &::-webkit-slider-thumb {
                         -webkit-appearance: none;
@@ -83,7 +83,6 @@ main{
                         background: black;
                         border: none;
                     }
-                      
                     &::-moz-range-thumb {
                         -webkit-appearance: none;
                         appearance: none;
@@ -97,16 +96,28 @@ main{
                         outline: none;
                     }
                 }
-                .buttons{
-                    width: 300px;
+                .time{
+                    width: 100%;
                     display: flex;
                     justify-content: space-between;
-                    
-                           
+                    font-size: 0.8rem;
+                }
+                .buttons{
+                    width: 200px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
                     img{
-                        width: 40px;
                         cursor: pointer;
-                        filter: invert(0.8);   
+                        filter: invert(0.9);
+                    }
+                    #play{
+                        width: 50px;
+                        height: 50px;
+                    }
+                    #prev, #next{
+                        width: 25px;
+                        height: 25px;
                     }
                 }
             }
@@ -115,7 +126,8 @@ main{
             display: none;
             cursor: pointer;
             img{
-                width: 40px;
+                width: 30px;
+                filter: invert(1);
             }
             @include mobile(){
                 display: block;
@@ -126,7 +138,8 @@ main{
         }
     }
     .list-box{
-        background: linear-gradient(180deg, rgb(197, 197, 197), rgb(6, 89, 110));
+        background: #1d2d46;
+        // background: linear-gradient(180deg,rgb(6, 89, 110), rgb(6, 145, 155), rgb(6, 89, 110));
         position: relative;
         width: 50%;
         padding: 30px;
@@ -139,20 +152,20 @@ main{
             position: static;
             width: 100vw;
             z-index: 2;
-            padding:30px;
+            padding: 50px 30px;
             
         }
         .search{
            
             input{
-                color: black;
+                color: white;
                 width: 90%;
                 font-size: 1rem;
                 height: 40px;
                 background: transparent;
                 
                 border: none;
-                border-bottom: rgb(0, 0, 0) solid 1px;
+                border-bottom: rgb(255, 255, 255) solid 1px;
             }
         }
         .list-container{
@@ -164,12 +177,25 @@ main{
                     width: 90%;
                 }
                 li{
-                    font-size: 1rem;
                     border-radius: 7px;
-                    padding: 10px 5px;
-                    margin:10px 0;
+                    padding: 5px 10px;
+                    margin:15px 0;
                     width: 100%;
                     cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    span{
+                        display: block;
+                    }
+                    .artist{
+                        font-size: 0.9rem;
+                        color: rgb(201, 201, 201);
+                    }
+                    img{
+                        width: 35px;
+                        height: 35px;
+                        margin-right: 10px ;
+                    }
                 }
             }
         }
@@ -177,7 +203,8 @@ main{
             display: none;
             cursor: pointer;
             img{
-                width: 40px;
+                width: 30px;
+                filter: invert(1);
             }
             @include mobile(){
                 display: block;
@@ -190,16 +217,16 @@ main{
     #slide-btn{
         position: absolute;
         top: 0;
-        right: -20px;
-        background-color:rgb(58, 134, 153);
+        right: -15px;
+        background-color:#0f88a7;
         cursor: pointer;
         z-index: 999;
         @include mobile(){
             display: none;
         }
         img{
-            width: 20px;
-            height: 20px;
+            width: 15px;
+            height: 15px;
             filter: invert(1);
             transition: 0.3s;
         }
@@ -220,5 +247,5 @@ main{
     }
 }
 .li-active{
-    background-color: black;
+    background-color: rgb(0, 0, 0);
 }

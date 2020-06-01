@@ -17,15 +17,19 @@
                     <div class="controls">
                         <span id="song-name"></span>
                         <input id="progress" min="0" step="0.1" max="" value="0" type="range">
-                        <audio preload="auto"></audio>
+                        <div class="time">
+                            <div id="current-time">00:00</div>
+                            <div id="duration"></div>
+                        </div>
+                        <audio preload="metadata"></audio>
                         <div class="buttons">
-                            <img src="https://img.icons8.com/metro/52/000000/chevron-left.png"  id="prev"/>
+                            <img src="./icons/next.svg" style="transform: rotate(180deg);" id="prev"/>
                             <img src="./icons/play.png" alt="play" id="play"/>
-                            <img src="https://img.icons8.com/metro/52/000000/chevron-right.png" id="next"/>
+                            <img src="icons/next.svg" id="next"/>
                         </div>
                     </div>
                 </div>
-                <div id="expand-btn"><img src="https://img.icons8.com/officel/96/000000/right-squared.png"/></div>
+                <div id="expand-btn"><img src="https://img.icons8.com/ios/100/000000/playlist.png"/></div>
             </div>
             <div class="list-box">
                 <div class="search">
@@ -35,7 +39,7 @@
                     <ul id="list"></ul>
                 </div>
                 <div id="slide-btn" ><img  src="https://img.icons8.com/ios-glyphs/90/000000/chevron-right.png"/></div> 
-                <div id="collapse-btn"><img src="https://img.icons8.com/officel/96/000000/left-squared.png"/></div>
+                <div id="collapse-btn"><img src="https://img.icons8.com/ios-filled/100/000000/back.png"/></div>
             </div>
             
         </div>

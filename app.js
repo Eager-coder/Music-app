@@ -9,10 +9,10 @@ const songName = document.getElementById('song-name');
 const thumbnail = document.getElementById('thumb');
 const searchField = document.getElementById('search');
 const slideBtn = document.getElementById('slide-btn');
-const expandBtn = document.getElementById('expand-btn')
-const collapseBtn = document.getElementById('collapse-btn')
-const playerCont = document.querySelector('.player-box')
-const listCont = document.querySelector('.list-box')
+const expandBtn = document.getElementById('expand-btn');
+const collapseBtn = document.getElementById('collapse-btn');
+const playerCont = document.querySelector('.player-box');
+const listCont = document.querySelector('.list-box');
 slideBtn.addEventListener('click', ()=>{
     playerCont.classList.toggle('player-active')
     listCont.classList.toggle('list-active');
@@ -53,7 +53,13 @@ thumbnail.src = './thumbnails/Orochi.jpg';
 
 // Setting music in list
 for(element of array){
-    let music = `<li id="https://raw.githubusercontent.com/Eager-coder/Music/master/${element.name}.mp3"> ${element.artist} - ${element.name} </li>`;
+    let music = `
+    <li>
+        <img class="mini-thumb" src="${element.thumb}"/> 
+        <div class="music-info>
+            <span class="name">${element.name}</span>
+            <span class="artist">${element.artist}</span> 
+    </li>`;
     listTag.innerHTML += music;
 }
 listTag.querySelectorAll('li')[0].classList.add('li-active')
@@ -87,6 +93,7 @@ function playMusic(index){
     audioTag.play();
     isPlaying = true;
     playStopBtn.src = './icons/pause.png';
+    
 }
 
 function stopMusic(){
@@ -114,13 +121,13 @@ function changeProgress(){
 setInterval(changeProgress, 1000);
 
 // Change progress bar
-// progressBar.addEventListener('click', () => audioTag.currentTime = progressBar.value);
 progressBar.addEventListener('input', () => audioTag.currentTime = progressBar.value);
 
 
 // Next/prev song
 nextBtn.addEventListener('click', () => {
      nextSong()      
+     
 })
 
 prevBtn.addEventListener('click', () => {
@@ -152,19 +159,37 @@ function nextSong(){
     playMusic(index)
 }
 
+// Searchig music
 searchField.addEventListener('input', (input)=>{
     Array.from(listTag.querySelectorAll('li')).forEach((e, index)=>{
         let searching = input.target.value.trim().toLowerCase();
         let songName  = array[index].name.trim().toLowerCase();
         let artist = array[index].artist.trim().toLowerCase();
         if(searching == songName || searching == artist){
-            e.style.display = 'block';
+            e.style.display = 'flex';
         }
         else if(input.target.value.trim() === ''){
-            e.style.display = 'block';
+            e.style.display = 'flex';
         }
         else{
             e.style.display = 'none';
         }
     })
 })
+
+// Display duration and current time
+audioTag.addEventListener('loadedmetadata', ()=> {
+    let duration = Math.floor(audioTag.duration/60) + ":"+ Math.floor(60*(audioTag.duration/60 - Math.floor(audioTag.duration/60)))
+    document.getElementById('duration').innerText = duration;
+})
+audioTag.addEventListener("timeupdate", ()=> {
+    var s = parseInt(audioTag.currentTime % 60);
+    var m = parseInt((audioTag.currentTime / 60) % 60);
+    if (s < 10){
+        s = '0'+ s;
+    }
+    if(m < 10){
+        m = '0' + m
+    }
+    document.getElementById('current-time').innerText = m + ':' + s
+});
