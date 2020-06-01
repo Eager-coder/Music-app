@@ -109,6 +109,7 @@ main {
        appearance: none;
   cursor: pointer;
   height: 1px;
+  padding: 2px 0;
   background-color: rgba(255, 255, 255, 0.6);
 }
 
