@@ -60,6 +60,9 @@ main{
                 }
             }
             .controls{
+                #song-name{
+                    margin-bottom: 20px;
+                }
                 padding: 20px 0;
                 display: flex;
                 justify-content: space-between;
@@ -80,7 +83,7 @@ main{
                         width: 15px;
                         height: 15px;
                         border-radius: 100%;
-                        background: black;
+                        background: white;
                         border: none;
                     }
                     &::-moz-range-thumb {
@@ -88,7 +91,7 @@ main{
                         appearance: none;
                         width: 15px;
                         height: 15px;
-                        background: black;
+                        background: white;
                         border-radius: 100%;
                         border: none;
                     }

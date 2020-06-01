@@ -101,6 +101,10 @@ main {
   height: 200px;
 }
 
+.app-container .player-box .player .controls #song-name {
+  margin-bottom: 20px;
+}
+
 .app-container .player-box .player .controls input[type=range] {
   width: 100%;
   -webkit-appearance: none;
@@ -117,7 +121,7 @@ main {
   width: 15px;
   height: 15px;
   border-radius: 100%;
-  background: black;
+  background: white;
   border: none;
 }
 
@@ -127,7 +131,7 @@ main {
        appearance: none;
   width: 15px;
   height: 15px;
-  background: black;
+  background: white;
   border-radius: 100%;
   border: none;
 }

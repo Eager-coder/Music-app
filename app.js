@@ -177,19 +177,19 @@ searchField.addEventListener('input', (input)=>{
     })
 })
 
-// Display duration and current time
+// Display song duration and current time
 audioTag.addEventListener('loadedmetadata', ()=> {
     let duration = Math.floor(audioTag.duration/60) + ":"+ Math.floor(60*(audioTag.duration/60 - Math.floor(audioTag.duration/60)))
     document.getElementById('duration').innerText = duration;
 })
 audioTag.addEventListener("timeupdate", ()=> {
-    var s = parseInt(audioTag.currentTime % 60);
-    var m = parseInt((audioTag.currentTime / 60) % 60);
-    if (s < 10){
-        s = '0'+ s;
+    let sec = parseInt(audioTag.currentTime % 60);
+    let min = parseInt((audioTag.currentTime / 60) % 60);
+    if (sec < 10){
+        sec = '0'+ sec;
     }
-    if(m < 10){
-        m = '0' + m
+    if(min < 10){
+        min = '0' + min
     }
-    document.getElementById('current-time').innerText = m + ':' + s
+    document.getElementById('current-time').innerText = min + ':' + sec
 });
