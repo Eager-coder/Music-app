@@ -114,8 +114,9 @@ function changeProgress(){
 setInterval(changeProgress, 1000);
 
 // Change progress bar
-progressBar.addEventListener('click', () => audioTag.currentTime = progressBar.value);
-progressBar.addEventListener('touchstart', () => audioTag.currentTime = progressBar.value);
+// progressBar.addEventListener('click', () => audioTag.currentTime = progressBar.value);
+progressBar.addEventListener('input', () => audioTag.currentTime = progressBar.value);
+
 
 // Next/prev song
 nextBtn.addEventListener('click', () => {
