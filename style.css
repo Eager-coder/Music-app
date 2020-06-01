@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -5,6 +6,7 @@
           box-sizing: border-box;
   outline: none;
   color: whitesmoke;
+  font-family: 'Poppins', sans-serif;
 }
 
 main {
@@ -101,8 +103,15 @@ main {
   height: 200px;
 }
 
+@media (max-width: 810px) {
+  .app-container .player-box .player .controls {
+    padding: 50px 0 20px 0;
+  }
+}
+
 .app-container .player-box .player .controls #song-name {
   margin-bottom: 20px;
+  font-weight: 400;
 }
 
 .app-container .player-box .player .controls input[type=range] {
@@ -112,6 +121,7 @@ main {
        appearance: none;
   cursor: pointer;
   height: 1.5px;
+  margin: 7px 0;
   background-color: rgba(255, 255, 255, 0.6);
 }
 
@@ -262,9 +272,14 @@ main {
   display: block;
 }
 
+.app-container .list-box .list-container ul li .name {
+  color: white;
+}
+
 .app-container .list-box .list-container ul li .artist {
-  font-size: 0.9rem;
-  color: #c9c9c9;
+  font-size: 0.85rem;
+  color: #d8d8d8;
+  font-weight: 300;
 }
 
 .app-container .list-box .list-container ul li img {

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 @mixin mobile {
     @media (max-width: 810px){
         @content;
@@ -9,7 +10,7 @@
     box-sizing: border-box;
     outline: none;
     color: whitesmoke;
-
+    font-family: 'Poppins', sans-serif;
 }
 
 main{
@@ -67,8 +68,12 @@ main{
                 align-items: center;
                 width: 100%;
                 height: 200px;
+                @include mobile(){
+                    padding: 50px 0 20px 0;
+                }
                 #song-name{
                     margin-bottom: 20px;
+                    font-weight: 400;
                 }
                 input[type=range]{
                     width:100% ;
@@ -76,6 +81,7 @@ main{
                     appearance: none;
                     cursor: pointer;
                     height: 1.5px;
+                    margin: 7px 0;
                     background-color: rgba(255, 255, 255, 0.6);
                     &::-webkit-slider-thumb {
                         -webkit-appearance: none;
@@ -190,9 +196,13 @@ main{
                     span{
                         display: block;
                     }
+                    .name{
+                        color: rgb(255, 255, 255);
+                    }
                     .artist{
-                        font-size: 0.9rem;
-                        color: rgb(201, 201, 201);
+                        font-size: 0.85rem;
+                        color: rgb(216, 216, 216);
+                        font-weight: 300;
                     }
                     img{
                         width: 35px;
