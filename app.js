@@ -47,7 +47,6 @@ const array = [audio1, audio2, audio3, audio4, audio5];
 
 // Default settings
 audioTag.src = "https://raw.githubusercontent.com/Eager-coder/Music/master/Orochi.mp3";
-audioTag.preload;
 songName.innerText = audio1.artist+' - '+audio1.name;
 thumbnail.src = './thumbnails/Orochi.jpg';
 
