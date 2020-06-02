@@ -161,10 +161,11 @@ function nextSong(){
 // Searchig music
 searchField.addEventListener('input', (input)=>{
     Array.from(listTag.querySelectorAll('li')).forEach((e, index)=>{
-        let searching = input.target.value.trim().toLowerCase();
+        let searching = input.target.value.trim().split(' ').join('').toLowerCase();
         let songName  = array[index].name.trim().toLowerCase();
-        let artist = array[index].artist.trim().toLowerCase();
-        if(searching == songName || searching == artist){
+        let artist = array[index].artist.split(' ').join('').toLowerCase();
+        console.log(artist)
+        if(songName.includes(searching) || artist.includes(searching) || (songName + artist).includes(searching) || (artist + songName ).includes(searching)){
             e.style.display = 'flex';
         }
         else if(input.target.value.trim() === ''){
