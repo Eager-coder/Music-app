@@ -1,49 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music app</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <main>
-        <div class="app-container">
-            <div class="player-box">
-                <div class="player">
-                    <div class="thumbnail">
-                        <img id="thumb" alt="">
-                    </div>
-                    <div class="controls">
-                        <div id="song-name"></div>
-                        <input id="progress" min="0" step="0.1" max="" value="0" type="range">
-                        <div class="time">
-                            <div id="current-time">00:00</div>
-                            <div id="duration"></div>
-                        </div>
-                        <audio preload="metadata"></audio>
-                        <div class="buttons">
-                            <img src="./icons/next.svg" style="transform: rotate(180deg);" id="prev"/>
-                            <img src="./icons/play.png" alt="play" id="play"/>
-                            <img src="icons/next.svg" id="next"/>
-                        </div>
-                    </div>
-                </div>
-                <div id="expand-btn"><img src="https://img.icons8.com/ios/100/000000/playlist.png"/></div>
-            </div>
-            <div class="list-box">
-                <div class="search">
-                    <input id="search" placeholder="Search" type="text">
-                </div>
-                <div class="list-container">
-                    <ul id="list"></ul>
-                </div>
-                <div id="slide-btn" ><img  src="https://img.icons8.com/ios-glyphs/90/000000/chevron-right.png"/></div> 
-                <div id="collapse-btn"><img src="https://img.icons8.com/ios-filled/100/000000/back.png"/></div>
-            </div>
-            
-        </div>
-    </main>
-    <script src="app.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Music app</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<main>
+			<div class="app-container">
+				<div class="player-box">
+					<div class="player">
+						<div class="thumbnail">
+							<img id="thumb" alt="" />
+						</div>
+						<div class="controls">
+							<div id="song-name"></div>
+							<input id="progress" min="0" step="0.1" max="" value="0" type="range" />
+							<div class="time">
+								<div id="current-time">00:00</div>
+								<div id="duration"></div>
+							</div>
+							<audio preload="metadata"></audio>
+							<div class="buttons">
+								<img src="./icons/next.svg" style="transform: rotate(180deg);" id="prev" />
+								<img src="./icons/play.png" alt="play" id="play" />
+								<img src="icons/next.svg" id="next" />
+								<img id="shuffle" src="https://img.icons8.com/android/100/000000/shuffle.png" />
+							</div>
+						</div>
+					</div>
+					<div id="expand-btn">
+						<img src="https://img.icons8.com/ios/100/000000/playlist.png" />
+					</div>
+				</div>
+				<div class="list-box">
+					<div class="search">
+						<input id="search" placeholder="Search" type="text" />
+					</div>
+					<div class="list-container">
+						<ul id="list"></ul>
+					</div>
+					<div id="slide-btn">
+						<img src="https://img.icons8.com/ios-glyphs/90/000000/chevron-right.png" />
+					</div>
+					<div id="collapse-btn">
+						<img src="https://img.icons8.com/ios-filled/100/000000/back.png" />
+					</div>
+				</div>
+			</div>
+		</main>
+		<script src="app.js"></script>
+	</body>
 </html>
