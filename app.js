@@ -12,6 +12,10 @@ const expandBtn = document.getElementById('expand-btn');
 const collapseBtn = document.getElementById('collapse-btn');
 const playerCont = document.querySelector('.player-box');
 const listCont = document.querySelector('.list-box');
+document.body.style.background = 'url(https://img5.goodfon.com/wallpaper/nbig/9/16/cyberpunk-car-supercar-art-anime-japan-kanji-japanse-street.jpg)'
+document.body.style.backgroundSize = '100%'
+document.body.style.backgroundRepeat = 'no-repeat'
+
 slideBtn.addEventListener('click', () => {
 	playerCont.classList.toggle('player-active');
 	listCont.classList.toggle('list-active');
